@@ -5,6 +5,18 @@
  */
 
 function sleep(milliseconds) {
+  return new Promise(function (resolve) {
+    // Get current time
+    const start = Date.now();
+
+    // Busy wait loop
+    while (Date.now() - start < milliseconds) {
+
+    }
+
+    // Resolve the promise once the loop is done
+    resolve();
+  })
 }
 
 module.exports = sleep;
